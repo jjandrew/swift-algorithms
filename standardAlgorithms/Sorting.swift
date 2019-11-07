@@ -67,4 +67,34 @@ class Sorting {
         }
         return (array1, array2)
     }
+
+
+
+
+
+    func split1(data: [Int]) -> [Int] {
+        let mid = data.count / 2
+        var array1 = [Int]()
+        var array2 = [Int]()
+        for i in 0...mid {
+            array1.append(data[i])
+        }
+        for j in mid+1...data.count-1 {
+            array2.append(data[j])
+        }
+        return array1
+    }
+
+    func split2(data: [Int]) -> [Int] {
+        let mid = data.count / 2
+        var array1 = [Int]()
+        var array2 = [Int]()
+        for i in 0...mid {
+            array1.append(data[i])
+        }
+        for j in mid+1...data.count-1 {
+            array2.append(data[j])
+        }
+        return array2
+    }
 }

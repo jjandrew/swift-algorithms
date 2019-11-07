@@ -50,6 +50,24 @@ class sortingTest: XCTestCase {
         //testCases = [(input: [1, 67, 99], input1: [14, 32, 54, 72], expected: [1, 14, 32, 54, 67, 72, 99])]
     }
     
+    func testSplitFunctionReturnsTwoArrays() {
+        let input = [1,2,3,4,5,6,7]
+        let expected = [1,2,3,4]
+        let sorting = Sorting()
+        let actual = sorting.split1(data: input)
+        XCTAssertEqual(actual, expected)
+    }
+    
+    func testSplitFunctionReturnsTwoArrays1() {
+        let input = [1,2,3,4,5,6,7]
+        let expected = [5,6,7]
+        let sorting = Sorting()
+        let actual = sorting.split2(data: input)
+        XCTAssertEqual(actual, expected)
+    }
+}
+    
+    
   //  func testMergeFunctionWithManyIntegerArrayReturnsSortedArray() {
    //     let testCases = [(input: [2, 2, 6, 365], [2, 8, 56, 70], expected: [2, 2, 2, 6, 8, 56, 70, 365]),
     //                     (input: [4, 7, 15, 24], [1, 6, 12], expected: [1, 4, 6, 7, 12, 15, 24]),
@@ -64,4 +82,4 @@ class sortingTest: XCTestCase {
      //       XCTAssertEqual(actual, testCase.expected)
     //    }
  //   }
-}
+//}
