@@ -25,4 +25,46 @@ class Sorting {
         }
         return array
     }
+    
+    func merge(data: [Int], data1: [Int]) -> [Int] {
+        let array1 = data
+        let array2 = data1
+        var finalArray = [Int]()
+        var pointer1 = 0
+        var pointer2 = 0
+        let totalValues = (array1.count) + (array2.count)
+        while pointer2 != (array2.count) && pointer1 != (array1.count) && finalArray.count != totalValues {
+            if array1[pointer1] < array2[pointer2] {
+                finalArray.append(array1[pointer1])
+                pointer1 += 1
+            } else {
+                finalArray.append(array2[pointer2])
+                pointer2 += 1
+            }
+        }
+        if array1.count > 0 {
+           for i in pointer1...array1.count - 1 {
+                finalArray.append(array1[i])
+            }
+        } else if array2.count > 0 {
+            for j in pointer2...array2.count - 1 {
+                finalArray.append(array2[j])
+            }
+        }
+        return finalArray
+
+    }
+    
+    func split(data: [Int]) -> ([Int], [Int]) {
+        let mid = data.count / 2
+        var array1 = [Int]()
+        var array2 = [Int]()
+        for i in 0...mid {
+            array1.append(data[i])
+        }
+        for j in mid+1...data.count-1 {
+            array2.append(data[j])
+        }
+        return (array1, array2)
+    }
 }
