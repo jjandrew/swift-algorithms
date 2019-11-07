@@ -62,13 +62,21 @@ class Sorting {
         for i in 0...mid {
             array1.append(data[i])
         }
-        for j in mid+1...data.count-1 {
+        for j in mid...data.count-1 {
             array2.append(data[j])
         }
         return (array1, array2)
     }
 
-
+    func mergeSort(data: [Int]) -> [Int] {
+        guard data.count > 1 else {
+            return data
+        }
+        let tupleLists = split(data: data)
+        let array1 = tupleLists.0
+        let array2 = tupleLists.1
+        return merge(data: mergeSort(data:array1), data1: mergeSort(data:array2))
+    }
 
 
 
