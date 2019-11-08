@@ -64,13 +64,13 @@ class sortingTest: XCTestCase {
     
     }
     
-    //func testMergeSortReturnsASortedArray() {
-     //   let input = [27, 45, 15, -100, 62, 54, 23]
-      //  let expected = [-100, 15, 23, 27, 45, 54, 62]
-     //   let sorting = Sorting()
-     //   let actual = sorting.mergeSort(data: input)
-     //   XCTAssertEqual(actual, expected)
-   // }
+    func testMergeSortReturnsASortedArray() {
+        let input = [27, 45, 15, -100, 62, 54, 23]
+        let expected = [-100, 15, 23, 27, 45, 54, 62]
+        let sorting = Sorting()
+        let actual = sorting.mergeSort(data: input)
+        XCTAssertEqual(actual, expected)
+    }
 }
     
     
