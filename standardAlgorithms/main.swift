@@ -8,12 +8,3 @@
 
 import Foundation
 
-print("Hello, World!")
-
-let name = "JJ"
-
-for i in 1...3 {
-    print(i)
-}
-
-print(name)

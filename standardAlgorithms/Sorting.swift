@@ -12,7 +12,7 @@ class Sorting {
     func bubbleSort(data: [Int]) -> [Int] {
         var array = data
         var i = array.count-2
-        var sorted = false
+        let sorted = false
         while sorted == false && i >= 0 {
             for q in 0...i {
                 if array[q] > array[q+1]{
@@ -30,8 +30,8 @@ class Sorting {
         var array1 = data
         var array2 = data1
         var finalArray = [Int]()
-        var pointer1 = 0
-        var pointer2 = 0
+        let pointer1 = 0
+        let pointer2 = 0
         let totalValues = (array1.count) + (array2.count)
         while finalArray.count != totalValues {
             if array1.count == 0 {
@@ -81,5 +81,27 @@ class Sorting {
         return merge(data: mergeSort(data:array1), data1: mergeSort(data:array2))
     }
 
-
+    func quickSort(data: [Int]) -> [Int] {
+      var left = [Int]()
+      var right = [Int]()
+      var newData = [Int]()
+      if data.count < 2 {
+        return data
+      } else {
+        let pivot = data[0]
+        for i in 1..<data.count {
+         let item = data[i]
+          if item < pivot {
+           left.append(item)
+         } else {
+           right.append(item)
+         }
+       }
+        newData.append(contentsOf: (quickSort(data: left)))
+        newData.append(pivot)
+        newData.append(contentsOf: (quickSort(data: right)))
+        return newData
+      }
+    }
+    
 }

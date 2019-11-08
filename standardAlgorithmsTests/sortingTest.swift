@@ -71,4 +71,15 @@ class sortingTest: XCTestCase {
         let actual = sorting.mergeSort(data: input)
         XCTAssertEqual(actual, expected)
     }
+    
+    func testQuickSortReturnsASortedArray() {
+        let input = [15, 13, 29, 55, 6, 24, 5, 42]
+        let expected = [5, 6, 13, 15, 24, 29, 42, 55]
+        let sorting = Sorting()
+        
+        let actual = sorting.quickSort(data: input)
+        
+        XCTAssertEqual(actual, expected)
+    }
+    
 }
