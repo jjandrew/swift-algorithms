@@ -27,8 +27,8 @@ class Sorting {
     }
     
     func merge(data: [Int], data1: [Int]) -> [Int] {
-        let array1 = data
-        let array2 = data1
+        var array1 = data
+        var array2 = data1
         var finalArray = [Int]()
         var pointer1 = 0
         var pointer2 = 0
@@ -44,19 +44,10 @@ class Sorting {
               }
             } else if array1[pointer1] < array2[pointer2] {
                     finalArray.append(array1[pointer1])
-                    pointer1 += 1
+                    array1.remove(at: 0)
             } else {
                 finalArray.append(array2[pointer2])
-                    pointer2 += 1
-            }
-        }
-        if array1.count > 0 {
-            for i in pointer1...array1.count - 1 {
-                finalArray.append(array1[i])
-            }
-        } else if array2.count < 0 {
-            for j in pointer2...array2.count - 1 {
-                finalArray.append(array2[j])
+                array2.remove(at: 0)
             }
         }
         return finalArray
