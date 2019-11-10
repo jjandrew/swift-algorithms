@@ -52,13 +52,16 @@ class sortingTest: XCTestCase {
     
 
     func testSplitFunctionReturnsTwoArrays() {
+        //arrange
         let input = [1,2,3,4,5,6,7]
         let expected = [1,2,3]
         let expected1 = [4,5,6,7]
         let sorting = Sorting()
+        //act
         let actual = sorting.split(data: input)
         let tuple1 = actual.0
         let tuple2 = actual.1
+        //assert
         XCTAssertEqual(tuple1, expected)
         XCTAssertEqual(tuple2, expected1)
     
@@ -82,4 +85,13 @@ class sortingTest: XCTestCase {
         XCTAssertEqual(actual, expected)
     }
     
+    func testInsertionSortReturnsASortedArray() {
+        let input = [15, 24, -5, 3, 27, 52, 12, 1]
+        let expected = [-5, 1, 3, 12, 15, 24, 27, 52]
+        let sorting = Sorting()
+        
+        let actual = sorting.quickSort(data: input)
+        
+        XCTAssertEqual(actual, expected)
+    }
 }

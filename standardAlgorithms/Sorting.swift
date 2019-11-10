@@ -104,4 +104,18 @@ class Sorting {
       }
     }
     
+    func insertionSort (data: [Int]) -> [Int] {
+      var array = data
+        for i in 1...array.count-1 {
+        let value = array[i]
+        var pointer = i
+        while pointer > 0 && (array[pointer - 1] > value) {
+            array[pointer] = array[pointer - 1]
+            pointer = pointer - 1
+        }
+        array[pointer] = value
+      }
+      return array
+    }
+    
 }
