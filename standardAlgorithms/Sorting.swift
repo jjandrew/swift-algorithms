@@ -118,4 +118,14 @@ class Sorting {
       return array
     }
     
+    func linearSearch (data: [Int], item: Int) -> Bool {
+        var found = false
+        for i in 1...data.count {
+            if data[i - 1] == item {
+                found = true
+            }
+        }
+        return found
+    }
+    
 }

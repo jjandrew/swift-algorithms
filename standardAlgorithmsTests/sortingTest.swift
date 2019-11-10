@@ -94,4 +94,17 @@ class sortingTest: XCTestCase {
         
         XCTAssertEqual(actual, expected)
     }
+    
+    func testLinearSearchReturnsABooleanExpressionDependingOnWhatsBeingSearchedFor() {
+        let array = [6, 5, 26, 5, 31, 50, 23, 10, 55, 67, 90, 2, 10, 7, 4, 9, 100, 36, 99, 20]
+        let search1 = 1
+        let search2 = 20
+        let sorting = Sorting()
+        
+        let actual1 = sorting.linearSearch(data: array, item: search1)
+        let actual2 = sorting.linearSearch(data: array, item: search2)
+        
+        XCTAssertEqual(actual1, false)
+        XCTAssertEqual(actual2, true)
+    }
 }
