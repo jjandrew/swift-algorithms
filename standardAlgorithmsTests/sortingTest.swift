@@ -107,4 +107,18 @@ class sortingTest: XCTestCase {
         XCTAssertEqual(actual1, false)
         XCTAssertEqual(actual2, true)
     }
+    
+    func testBinarySearchReturnsABooleanExpressionDependingOnWhatsBeingSearchedFor() {
+        let array = [-150, -40, 0, 5, 12, 34, 56, 105, 263]
+        let search1 = 1
+        let search2 = 105
+        let sorting = Sorting()
+        
+        let actual1 = sorting.linearSearch(data: array, item: search1)
+        let actual2 = sorting.linearSearch(data: array, item: search2)
+        
+        XCTAssertEqual(actual1, false)
+        XCTAssertEqual(actual2, true)
+    }
+    
 }
