@@ -37,6 +37,9 @@ class sortingTest: XCTestCase {
         }
     }
     
+    func bubbleSortPerformanceTest() {
+    }
+        
     func testMergeFunctionWithIntegerArrayReturnsSortedArray() {
         //arrange
         let input = [1, 67, 99]
@@ -108,6 +111,36 @@ class sortingTest: XCTestCase {
         XCTAssertEqual(actual2, true)
     }
     
+    func linearSearchPerformanceTest() {
+        let sorting = Sorting()
+        var data = [Int]()
+        for i in 0..<5 {
+            data.append(i)
+        }
+        let searchFor = data[Int.random(in: 0..<data.count)]
+        measure {
+        sorting.linearSearch(data: data, item: searchFor)
+        }
+        
+        var data1 = [Int]()
+        for j in 0..<50 {
+            data1.append(j)
+        }
+        let searchFor1 = data1[Int.random(in: 0..<data.count)]
+        measure {
+        sorting.linearSearch(data: data1, item: searchFor1)
+        }
+        
+        var data2 = [Int]()
+        for m in 0..<500 {
+            data2.append(m)
+        }
+        let searchFor2 = data2[Int.random(in: 0..<data.count)]
+        measure {
+        sorting.linearSearch(data: data2, item: searchFor2)
+        }
+    }
+    
     func testBinarySearchReturnsABooleanExpressionDependingOnWhatsBeingSearchedFor() {
         let array = [-150, -40, 0, 5, 12, 34, 56, 105, 263]
         let search1 = 1
@@ -120,5 +153,36 @@ class sortingTest: XCTestCase {
         XCTAssertEqual(actual1, false)
         XCTAssertEqual(actual2, true)
     }
+    
+    func binarySearchPerformanceTest() {
+        let sorting = Sorting()
+        var data = [Int]()
+        for i in 0..<5 {
+            data.append(i)
+        }
+        let searchFor = data[Int.random(in: 0..<data.count)]
+        measure {
+            sorting.binarySearch(data: data, item: searchFor)
+        }
+
+        var data1 = [Int]()
+        for i in 0..<50 {
+            data.append(i)
+        }
+        let searchFor1 = data1[Int.random(in: 0..<data.count)]
+        measure {
+            sorting.binarySearch(data: data, item: searchFor1)
+        }
+        
+        var data2 = [Int]()
+        for i in 0..<500 {
+            data.append(i)
+        }
+        let searchFor2 = data2[Int.random(in: 0..<data.count)]
+        measure {
+            sorting.binarySearch(data: data, item: searchFor2)
+        }
+    }
+
     
 }
