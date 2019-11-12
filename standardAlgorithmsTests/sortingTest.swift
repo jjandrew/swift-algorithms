@@ -38,6 +38,31 @@ class sortingTest: XCTestCase {
     }
     
     func bubbleSortPerformanceTest() {
+        let sorting = Sorting()
+        var data = [Int]()
+        for i in 0..<5 {
+            data.append(Int.random(in: 1...100))
+        }
+
+        measure {
+            sorting.bubbleSort(data: data)
+        }
+        var data1 = [Int]()
+        for j in 0..<50 {
+            data1.append(Int.random(in: 1...100))
+        }
+
+        measure {
+            sorting.bubbleSort(data: data1)
+        }
+        var data2 = [Int]()
+        for m in 0..<500 {
+            data2.append(Int.random(in: 1...100))
+        }
+
+        measure {
+            sorting.bubbleSort(data: data2)
+        }
     }
         
     func testMergeFunctionWithIntegerArrayReturnsSortedArray() {
@@ -78,6 +103,34 @@ class sortingTest: XCTestCase {
         XCTAssertEqual(actual, expected)
     }
     
+    func mergeSortPerformanceTest() {
+        let sorting = Sorting()
+        var data = [Int]()
+        for i in 0..<5 {
+            data.append(Int.random(in: 1...100))
+        }
+
+        measure {
+            sorting.mergeSort(data: data)
+        }
+        var data1 = [Int]()
+        for j in 0..<50 {
+            data1.append(Int.random(in: 1...100))
+        }
+
+        measure {
+            sorting.mergeSort(data: data1)
+        }
+        var data2 = [Int]()
+        for m in 0..<500 {
+            data2.append(Int.random(in: 1...100))
+        }
+
+        measure {
+            sorting.mergeSort(data: data2)
+        }
+    }
+    
     func testQuickSortReturnsASortedArray() {
         let input = [15, 13, 29, 55, 6, 24, 5, 42]
         let expected = [5, 6, 13, 15, 24, 29, 42, 55]
@@ -88,14 +141,70 @@ class sortingTest: XCTestCase {
         XCTAssertEqual(actual, expected)
     }
     
+    func quickSortPerformanceTest() {
+        let sorting = Sorting()
+        var data = [Int]()
+        for i in 0..<5 {
+            data.append(Int.random(in: 1...100))
+        }
+
+        measure {
+            sorting.quickSort(data: data)
+        }
+        var data1 = [Int]()
+        for j in 0..<50 {
+            data1.append(Int.random(in: 1...100))
+        }
+
+        measure {
+            sorting.quickSort(data: data1)
+        }
+        var data2 = [Int]()
+        for m in 0..<500 {
+            data2.append(Int.random(in: 1...100))
+        }
+
+        measure {
+            sorting.quickSort(data: data2)
+        }
+    }
+    
     func testInsertionSortReturnsASortedArray() {
         let input = [15, 24, -5, 3, 27, 52, 12, 1]
         let expected = [-5, 1, 3, 12, 15, 24, 27, 52]
         let sorting = Sorting()
         
-        let actual = sorting.quickSort(data: input)
+        let actual = sorting.insertionSort(data: input)
         
         XCTAssertEqual(actual, expected)
+    }
+    
+    func InsertionSortPerformanceTest() {
+        let sorting = Sorting()
+        var data = [Int]()
+        for i in 0..<5 {
+            data.append(Int.random(in: 1...100))
+        }
+
+        measure {
+            sorting.insertionSort(data: data)
+        }
+        var data1 = [Int]()
+        for j in 0..<50 {
+            data1.append(Int.random(in: 1...100))
+        }
+
+        measure {
+            sorting.insertionSort(data: data1)
+        }
+        var data2 = [Int]()
+        for m in 0..<500 {
+            data2.append(Int.random(in: 1...100))
+        }
+
+        measure {
+            sorting.insertionSort(data: data2)
+        }
     }
     
     func testLinearSearchReturnsABooleanExpressionDependingOnWhatsBeingSearchedFor() {
