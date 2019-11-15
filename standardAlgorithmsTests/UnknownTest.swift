@@ -28,7 +28,7 @@ class UnknownTest: XCTestCase {
         let expected = 5
         let unknown = Unknown()
         
-        let actual = unknow.sumOfFirstAndLast(array: input)
+        let actual = unknown.sumOfFirstAndLast(array: input)
         
         XCTAssertEqual(actual, expected)
     }

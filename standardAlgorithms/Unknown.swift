@@ -8,7 +8,7 @@
 
 import Foundation
 
-class unkown {
+class Unknown {
     func sumOfFirstAndLast(array: [Int]) -> Int {
         if array.count == 1 {
             return array[0]
