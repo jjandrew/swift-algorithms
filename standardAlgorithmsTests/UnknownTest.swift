@@ -42,4 +42,36 @@ class UnknownTest: XCTestCase {
         
         XCTAssertEqual(actual, expected)
     }
+    
+    func testmodeOfSortedArrayReturns0WhenEmptyArrayIsPassedIn() {
+        let input = [Int]()
+        let expected = 0
+        let unknown = Unknown()
+        
+        let actual = unknown.modeOfSortedArray(array: input)
+        
+        XCTAssertEqual(actual, expected)
+    
+    }
+    
+    func testIfmodeOfSortedArrayReturnsTheCorrectModeWhenOneValueIsInput() {
+        let input = [1]
+        let expected = 1
+        let unknown = Unknown()
+        
+        let actual = unknown.modeOfSortedArray(array: input)
+        
+        XCTAssertEqual(actual, expected)
+    }
+        
+    func testIfmodeOfSortedArrayReturnsTheCorrectMode() {
+        let input = [1, 5, 5, 7, 7, 7, 7, 8, 10, 10, 35, 35, 35]
+        let expected = 7
+        let unknown = Unknown()
+        
+        let actual = unknown.modeOfSortedArray(array: input)
+        
+        XCTAssertEqual(actual, expected)
+        
+    }
 }
