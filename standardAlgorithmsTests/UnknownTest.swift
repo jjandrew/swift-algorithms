@@ -25,7 +25,17 @@ class UnknownTest: XCTestCase {
     
     func ifArrayContainsOneItemFunctionReturnsThatNumber() {
         let input = [5]
-        let expected = 5
+        let expected = 10
+        let unknown = Unknown()
+        
+        let actual = unknown.sumOfFirstAndLast(array: input)
+        
+        XCTAssertEqual(actual, expected)
+    }
+    
+    func testIfArrayIfEmpty0IsReturned() {
+        let input = [Int]()
+        let expected = 0
         let unknown = Unknown()
         
         let actual = unknown.sumOfFirstAndLast(array: input)
