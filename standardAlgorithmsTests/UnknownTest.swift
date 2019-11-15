@@ -74,4 +74,28 @@ class UnknownTest: XCTestCase {
         XCTAssertEqual(actual, expected)
         
     }
+    
+    func testIfmodeOfSortedArrayReturnsTheCorrectModeWhenMultipleSameValuesAreEntered() {
+        let input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        let expected = 10
+        let unknown = Unknown()
+        
+        let actual = unknown.modeOfSortedArray(array: input)
+        
+        XCTAssertEqual(actual, expected)
+        
+    }
+    
+    func testSecondSmallestNumberFunctionReturns0WhenLessThan2NumbersEntered() {
+        let input1 = [0]
+        let input2 = [Int]()
+        let expected = 0
+        let unknown = Unknown()
+        
+        let actual1 = unknown.secondSmallest(array: input1)
+        let actual2 = unknown.secondSmallest(array: input2)
+        
+        XCTAssertEqual(actual1, expected)
+        XCTAssertEqual(actual2, expected)
+    }
 }
